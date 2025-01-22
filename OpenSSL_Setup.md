@@ -89,6 +89,7 @@ organizationName = ExampleOrg
 commonName = MyCA
 ```
  14.  Sign you certificates
+ 
 `sudo openssl ca -in <certificate-ID>.csr -out certs/<certificate-ID>.pem -extfile subalt.txt`
 
 You can specify -days 14610 to make it 40 years.
