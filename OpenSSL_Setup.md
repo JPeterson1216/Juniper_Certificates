@@ -16,11 +16,11 @@ sudo apt install openssl`
   echo 1000 > ~/myCA/serial`
 
 3. Generate a private key
-`openssl genrsa -aes256 -out ~/myCA/private/ca.key.pem 4096
-chmod 400 ~/myCA/private/ca.key.pem`
+`openssl ecparam -name secp384r1 -genkey -noout -out ec_key.pem
+chmod 400 ~/myCA/private/ec_key.pem`
 
 4. Create a CA Certificate
-`openssl req -x509 -new -nodes -key ~/myCA/private/ca.key.pem -sha256 -days 3650 -out ~/myCA/certs/ca.cert.pem`
+`openssl req -new -x509 -days 36524 -key private/ec_key.pem -sha384 -out cacert.pem`
 You will be prompted to provide information for the certificate. For example:
 
 Country Name: Two-letter country code (e.g., "US")
