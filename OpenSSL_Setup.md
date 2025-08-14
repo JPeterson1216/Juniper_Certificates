@@ -90,9 +90,10 @@ commonName = MyCA
 ```
  14.  Sign you certificates
  
-`sudo openssl ca -in <certificate-ID>.csr -out certs/<certificate-ID>.pem -extfile subalt.txt`
+`sudo openssl ca -in <certificate-ID>.csr -out certs/<certificate-ID>.pem -days 36524`
 
 You can specify -days 14610 to make it 40 years.
+Specify -days 36524 for 100 years
 Keep in mind the validity of your CA certificate. It also needs to be valid for 40 years
 
 create subalt.txt. It will specify the dns of your customer. For multiple domain names. not mandatory
